@@ -6,11 +6,12 @@ angular.module('LunchCheck', [])
 
 function LunchCheckController ($scope) {
 
-  $scope.menu = "";
+  $scope.menu = ""
 
   $scope.checkIfTooMuch = function () {
 
-    var itemCount = $scope.menu.split(",").length;
+    var itemList = $scope.menu.split(",");
+    var itemCount = itemList.length;
 
     if ($scope.menu == "") {
       $scope.message = "Please enter data first"
