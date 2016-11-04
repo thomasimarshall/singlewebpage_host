@@ -2,12 +2,12 @@
     'use strict'
 
     angular.module('LunchCheck', [])
-        .controller('LunchCheckController', LunchCheckController);
+    .controller('LunchCheckController', LunchCheckController);
+
+    LunchCheckController.$inject = ['$scope'];
 
     function LunchCheckController($scope) {
-
         $scope.menu = ""
-
         $scope.checkIfTooMuch = function() {
 
             var itemList = $scope.menu.split(",");
