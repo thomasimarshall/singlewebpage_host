@@ -30,13 +30,13 @@
 
         var buyList = [{
             name: "cookies",
-            quantity: 42
+            quantity: 7
         }, {
             name: "drinks",
             quantity: 2
         }, {
             name: "chocolates",
-            quantity: 13
+            quantity: 30
         }, {
             name: "apples",
             quantity: 4
