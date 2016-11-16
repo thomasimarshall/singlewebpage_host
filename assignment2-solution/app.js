@@ -30,19 +30,19 @@
 
         var buyList = [{
             name: "cookies",
-            quantity: 1
+            quantity: 42
         }, {
-            name: "cola",
-            quantity: 21
-        }, {
-            name: "crisps",
-            quantity: 3
+            name: "drinks",
+            quantity: 2
         }, {
             name: "chocolates",
             quantity: 13
         }, {
-            name: "mints",
-            quantity: 14
+            name: "apples",
+            quantity: 4
+        }, {
+            name: "oranges",
+            quantity: 2
         }];
 
         var boughtList = [];
