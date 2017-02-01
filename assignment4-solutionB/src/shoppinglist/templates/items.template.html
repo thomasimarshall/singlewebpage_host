@@ -1,6 +1,7 @@
+<h1> Items </h1>
+<h3> Here are the items in the chosen category... </h3>
 <ul>
-  <li ng-repeat="item in $ctrl.items"
-      ui-sref="itemDetail({itemId: $index})">
-    {{ item.quantity }} of {{ item.name }}
+  <li ng-repeat="item in itemCtrl.list">
+    {{ item.name }}
   </li>
 </ul>

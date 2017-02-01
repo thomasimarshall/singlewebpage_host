@@ -1,6 +1,8 @@
-<h1> CATAGORIES TAB</h1>
+<h1> Categories </h1>
+<h3> Please choose a category </h3>
 <ul>
-  <li ng-repeat="item in $ctrl.list">
-    {{ item }}
+  <li ng-repeat="item in catCtrl.list"
+    ui-sref="items({categoryId: item.short_name})">
+    {{ item.name }}
   </li>
 </ul>

@@ -1,41 +1,31 @@
-(function () {
-'use strict';
+(function() {
+    'use strict';
 
-angular.module('data')
-.service('MenuDataService', MenuDataService);
+    angular.module('data')
+        .service('MenuDataService', MenuDataService);
 
-  MenuDataService.$inject = ['$http']
-  function MenuDataService($http) {
-    var menuDataService = this;
+    MenuDataService.$inject = ['$http']
 
+    function MenuDataService($http) {
+        var menuDataService = this;
 
-    menuDataService.getAllCategories = function (){
-      console.log("Entered menuDataService.getAllCategories")
+        menuDataService.getAllCategories = function() {
 
-       return $http.get('https://davids-restaurant.herokuapp.com/categories.json').then(function (response) {
-         console.log(response.data)
-         return response.data
-       })
+            return $http.get('https://davids-restaurant.herokuapp.com/categories.json')
+                .then(function(response) {
+                    return response.data
+                })
+        }
 
+        menuDataService.getItemsForCategory = function(categoryShortName) {
+          
+            var getItemsForCategoryUrl = "https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName;
+
+            return $http.get(getItemsForCategoryUrl)
+                .then(function(response) {
+                    return response.data.menu_items;
+
+                })
+        }
     }
-
-    menuDataService.getItemsForCategory = function (categoryShortName){
-      getItemsForCategoryUrl = "https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName;
-
-      // categoryShortName is A, B or C etc.
-
-        return $http({
-            method: 'GET',
-            url: (getItemsForCategoryUrl)
-        }).then(function(result) {
-            console.log("Returning found items for category")
-            console.log(result)
-            return result;
-        });
-
-    }
-
-
-  }
-
 })();
