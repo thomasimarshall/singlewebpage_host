@@ -1,6 +1,6 @@
+<h1> CATAGORIES TAB</h1>
 <ul>
-  <li ng-repeat="item in $ctrl.items"
-      ui-sref="itemDetail({itemId: $index})">
-    {{ item.quantity }} of {{ item.name }}
+  <li ng-repeat="item in $ctrl.list">
+    {{ item }}
   </li>
 </ul>
