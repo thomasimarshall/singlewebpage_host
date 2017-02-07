@@ -10,7 +10,9 @@ function InfoService() {
 
   service.getMessage = function(){
     console.log("HERE IS THE MESSAGE");
-    return "hello"
+
+    var testy = 123;
+    return testy
   }
 
 }

@@ -47,7 +47,7 @@ function routeConfig ($stateProvider) {
       controller: 'InfoController',
       controllerAs: 'infoCtrl',
       resolve: {
-        menuItems: ['InfoService', function (InfoService) {
+        info: ['InfoService', function (InfoService) {
           console.log("here")
           return InfoService.getMessage();
         }]

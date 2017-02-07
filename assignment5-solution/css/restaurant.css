@@ -190,6 +190,13 @@ a[ui-sref="admin.auth"] {
   /* End Footer */
 }
 
+textarea:focus, input:focus {
+    color: #000;
+}
+
+input, select, textarea{
+    color: #000;
+}
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
