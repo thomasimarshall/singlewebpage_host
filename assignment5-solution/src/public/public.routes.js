@@ -35,23 +35,13 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/public/menu-items/menu-items.html',
       controller: 'MenuItemsController',
       controllerAs: 'menuItemsCtrl',
-      // resolve: {
-      //   menuItems: ['$stateParams','InfoService', function ($stateParams, InfoService) {
-      //     return InfoService.getMenuItems($stateParams.category);
-      //   }]
-      // }
+
     })
-    .state('public.myinfo', {
-      url: '/myinfo',
-      templateUrl: 'src/public/info/my-info.html',
-      controller: 'InfoController',
-      controllerAs: 'infoCtrl',
-      resolve: {
-        info: ['InfoService', function (InfoService) {
-          console.log("here")
-          return InfoService.getMessage();
-        }]
-      }
+    .state('public.signup', {
+      url: '/signup',
+      templateUrl: 'src/public/signUp/sign-up.html',
+      controller: 'SignUpController',
+      controllerAs: 'signUpCtrl',
     });
 }
 })();
