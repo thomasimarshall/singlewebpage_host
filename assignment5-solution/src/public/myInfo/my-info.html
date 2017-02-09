@@ -1,10 +1,14 @@
-<fieldset>
-  <div class="container">
-<legend>My Info</legend>
-<form name='infoForm' novalidate>
 
-<h1> HERE IS THE INFO PAGE </h1>
-
-</form>
+<div ng-if="$ctrl.userInfo" class="container">
+<legend>User Details</legend>
+<h1>{{$ctrl.userInfo.favItem.short_name}} - {{$ctrl.userInfo.favItem.name}}</h1>
+<h3>{{$ctrl.userInfo.favItem.description}}</h3>
+<h3>{{$ctrl.basePath}}/images/menu/{{$ctrl.userInfo.favItem.category_short_name}}/{{$ctrl.userInfo.favItem.category_short_name}}.jpg</h3>
+<img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/menu/{{$ctrl.userInfo.favItem.category_short_name}}/{{$ctrl.userInfo.favItem.category_short_name}}.jpg" alt="{{$ctrl.userInfo.favItem.name}}">
 </div>
-</fieldset>
+<div ng-if="!$ctrl.userInfo" class="container">
+
+<h1>Not Signed Up Yet.
+<a ui-sref="public.signup"> Sign up Now!
+</h1>
+</div>

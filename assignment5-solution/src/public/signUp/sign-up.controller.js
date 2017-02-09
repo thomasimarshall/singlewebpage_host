@@ -12,25 +12,29 @@ function SignUpController($http, SignUpService) {
 
 
   $ctrl.submit = function(){
+    console.log("entered submit")
     $ctrl.submitted = true;
-    var getItemsForCategoryUrl = "https://davids-restaurant.herokuapp.com/menu_items.json?category=" + $ctrl.user.dish.toUpperCase();
+    //var getItemsForCategoryUrl = "https://davids-restaurant.herokuapp.com/menu_items.json?category=" + $ctrl.user.dish.toUpperCase();
+    var favItemUrlTemplate = "https://swpa-coursera.herokuapp.com/menu_items/short_name.json";
 
-    $http.get(getItemsForCategoryUrl).then(function(response) {
-      if(response.data.menu_items.length > 0){
-        console.log("found item")
-        console.log(response.data.menu_items)
+    var favItemUrl = favItemUrlTemplate.replace("short_name", $ctrl.user.dish.toUpperCase())
+    console.log(favItemUrl);
 
+    $http.get(favItemUrl)
+      .then(function(response) {
         $ctrl.found = true;
-        //$ctrl.submitted = false;
 
+        var favItem = response.data
+        $ctrl.user.favItem = favItem;
+        
         console.log("saving user info...")
         SignUpService.saveUserInfo($ctrl.user);
-
-      } else {
+    })
+      .catch(function(response) {
+        console.log("Item not found!")
+        console.log(response)
         $ctrl.found = false;
-      }
-    });
-          // Handle error here)
+      });
 
 
   }

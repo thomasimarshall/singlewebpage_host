@@ -9,10 +9,14 @@ function SignUpService() {
 
   service.saveUserInfo = function(userInput){
     service.savedUserInfo = userInput;
-
-    console.log("Saved user info is")
-    console.log(service.savedUserInfo);;
   }
+
+  service.getUserInfo = function(){
+    console.log("returning saved user info...");
+    console.log(service.savedUserInfo);
+    return service.savedUserInfo;
+  }
+
 
 }
 
