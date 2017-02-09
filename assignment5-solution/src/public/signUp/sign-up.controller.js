@@ -8,7 +8,8 @@ SignUpController.$inject = ['$http', 'SignUpService'];
 function SignUpController($http, SignUpService) {
   var $ctrl = this;
 
-  $ctrl.found = false;
+  //$ctrl.found = false;
+
 
   $ctrl.submit = function(){
     $ctrl.submitted = true;
@@ -16,9 +17,11 @@ function SignUpController($http, SignUpService) {
 
     $http.get(getItemsForCategoryUrl).then(function(response) {
       if(response.data.menu_items.length > 0){
-        $ctrl.found = true;
-        $ctrl.submitted = false;
+        console.log("found item")
+        console.log(response.data.menu_items)
 
+        $ctrl.found = true;
+        //$ctrl.submitted = false;
 
         console.log("saving user info...")
         SignUpService.saveUserInfo($ctrl.user);

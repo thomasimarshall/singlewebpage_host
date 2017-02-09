@@ -72,7 +72,7 @@
                 regForm.dish.$touched">
                 Dish invalid.
               </span>
-              <span ng-if="!signUpCtrl.found && signUpCtrl.submitted">
+              <span ng-if="signUpCtrl.found === false && signUpCtrl.submitted">
                 No such menu number exists
               </span>
               <span ng-if="signUpCtrl.found && signUpCtrl.submitted">
