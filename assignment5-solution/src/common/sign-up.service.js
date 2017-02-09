@@ -12,11 +12,8 @@ function SignUpService() {
   }
 
   service.getUserInfo = function(){
-    console.log("returning saved user info...");
-    console.log(service.savedUserInfo);
     return service.savedUserInfo;
   }
-
 
 }
 
