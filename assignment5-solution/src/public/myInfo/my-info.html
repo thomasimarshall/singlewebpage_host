@@ -1,6 +1,9 @@
 <div ng-if="$ctrl.userInfo" class="container">
-    <h1>Your Favorite Dish</h1>
-    <h2>{{$ctrl.userInfo.favItem.short_name}} - {{$ctrl.userInfo.favItem.name}}</h2>
+    <h1>Your Registered Information</h1>
+    <h3>Name: {{$ctrl.userInfo.firstname}} {{$ctrl.userInfo.lastname}}</h3>
+    <h3>email: {{$ctrl.userInfo.email}}</h3>
+    <h3>phone: {{$ctrl.userInfo.phone}}</h3>
+    <h3>Favorite Dish: {{$ctrl.userInfo.favItem.short_name}} - {{$ctrl.userInfo.favItem.name}}</h2>
     <h3>{{$ctrl.userInfo.favItem.description}}</h3>
     <img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/menu/{{$ctrl.userInfo.favItem.category_short_name}}/{{$ctrl.userInfo.favItem.category_short_name}}.jpg" alt="{{$ctrl.userInfo.favItem.name}}">
 </div>
