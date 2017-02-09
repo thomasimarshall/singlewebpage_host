@@ -68,10 +68,7 @@
               name="dish"
               placeholder="Favorite Dish"
               ng-model="signUpCtrl.user.dish">
-              <span ng-if="regForm.dish.$invalid &&
-                regForm.dish.$touched">
-                Dish invalid.
-              </span>
+              <br>
               <span ng-if="signUpCtrl.found === false && signUpCtrl.submitted">
                 No such menu number exists
               </span>
